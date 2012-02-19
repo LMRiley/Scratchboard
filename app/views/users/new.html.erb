@@ -1,0 +1,17 @@
+<div class="container">
+	<h2>Get started with Scratchboard</h2>
+	<%= form_for(@user) do |f| %>
+		<%= render 'shared/error_messages' %>
+		<form class = "well">
+			<label>Your name</label>
+			<%= f.text_field :name %>
+			<label>Email</label>
+			<%= f.text_field :email %>
+			<label>Password</label>
+			<%= f.password_field :password %>
+			<label>Confirm  password</label>
+			<%= f.password_field :password_confirmation %></br>
+			<button type="submit" class="btn">Sign up</button>
+		</form>
+	<% end %>
+</div>
