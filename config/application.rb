@@ -40,5 +40,8 @@ module PmApp31
     config.filter_parameters += [:password]
     
     config.assets.enabled = true
+    
+    require 'bootstrap-sass'
+  
   end
 end

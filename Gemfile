@@ -7,11 +7,13 @@ gem "will_paginate", "~> 3.0.2"
 gem 'sqlite3', '1.3.4'
 gem 'sprockets', '~> 2.0'
 
-gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
 
 gem 'jquery-rails'
+gem 'sass-rails', '~> 3.1'
+gem 'bootstrap-sass', '~> 2.0.1'
+gem "twitter_bootstrap_form_for", "~> 1.0.5"
 
 group :development do
   gem 'rspec-rails', '2.6.1'
