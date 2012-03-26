@@ -64,6 +64,23 @@ describe User do
     user_with_duplicate_email = User.new(@attr)
     user_with_duplicate_email.should_not be_valid
   end
+  
+describe "project associations" do
+  
+  before(:each) do 
+    @user = User.create(@attr)
+    @project1 = Factory(:project, :user => @user, :created_at => 1.day.ago)
+    @project2 = Factory(:project, :user => @user, :created_at => 1.hour.ago)
+  end
+  
+  it "should have the projects attribute" do
+    @user.should respond_to(:projects)
+  end
+  
+  it "should have the projects in the right order" do
+    @user.projects.should == [@project2, @project1]
+  end
+end
 
 describe "password validations" do
 

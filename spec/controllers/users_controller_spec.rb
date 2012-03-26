@@ -18,6 +18,13 @@ describe UsersController do
       assigns(:user).should == @user
     end
     
+    it "should show the list of projects for that user" do
+      project1 = Factory(:project, :user => @user, :body => "test text 1")
+      project2 = Factory(:project, :user => @user, :body => "test text 2")
+      get :show, :id => @user
+      response.should have_selector("span.body", :body => project1.body)
+      response.should have_selector("span.body", :body => project2.body)    
+    end
     end
 
   end
@@ -73,11 +80,6 @@ describe UsersController do
       it "should redirect to the user 'show' page" do
         post :create, :user => @attr
         response.should redirect_to(user_path(assigns(:user)))
-      end
-      
-      it "should have a success flash message" do
-        post :create, :user => @attr
-        flash[:success].should =~ /Success! Welcome to Scratchboard/i
       end
       
       it "should sign the user in" do

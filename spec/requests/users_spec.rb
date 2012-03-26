@@ -48,7 +48,7 @@ describe "Users" do
         fill_in :email,     :with => ""
         fill_in :password,  :with => ""
         click_button
-        response.should have_selector("div.flash.error", :content => "invalid")
+        controller.should_not be_signed_in
       end
     
     end
@@ -62,7 +62,7 @@ describe "Users" do
         fill_in :password,  :with => user.password
         click_button
         controller.should be_signed_in
-        click_link "Sign out"
+        click_link "Log out"
         controller.should_not be_signed_in
       end
     

@@ -1,0 +1,8 @@
+<%= twitter_bootstrap_form_for @project do |p| %>
+  <%= render 'shared/error_messages', :object => p.object %>
+  <%= p.text_field :title %>
+  <%= p.text_area :body %> 
+  <%= p.actions do %>
+		<%= p.submit 'Save project', :class => 'btn btn-success'%>
+	<% end %> 
+<% end %>

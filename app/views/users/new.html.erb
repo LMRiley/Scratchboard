@@ -6,9 +6,9 @@
 		<div class = "span4">
 			</br>
 			<%= twitter_bootstrap_form_for @user do |user| %>
-				<%= user.inputs 'Sign up for Scratchboard', :class => "" do %>
+				<%= user.inputs 'Sign up for Scratchboard' do %>
 					</br>
-					<%= user.text_field :name, :placeholder => 'Your Name' %>
+					<%= user.text_field :name, "Full name", :placeholder => 'Your Name' %>
 					<%= user.email_field :email, :placeholder => 'your@email.com' %>
 					<%= user.password_field :password %>
 					<%= user.password_field :password_confirmation, 'Confirm password' %>

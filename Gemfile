@@ -14,6 +14,8 @@ gem 'jquery-rails'
 gem 'sass-rails', '~> 3.1'
 gem 'bootstrap-sass', '~> 2.0.1'
 gem "twitter_bootstrap_form_for", "~> 1.0.5"
+gem "cancan"
+gem "rake", "~> 0.9.2.2"
 
 group :development do
   gem 'rspec-rails', '2.6.1'
