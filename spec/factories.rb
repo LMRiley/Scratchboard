@@ -9,3 +9,8 @@ Factory.define :project do |project|
   project.body "test content"
   project.association :user  
 end
+  
+Factory.define :thought do |thought|
+  thought.content "test thought"
+  thought.association :project
+end  

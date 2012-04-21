@@ -29,6 +29,22 @@ describe Project do
       @project.user.should == @user
     end
   end
+  
+  describe "thought associations" do
+    
+    before(:each) do
+      @project = Project.create(@attr)
+      @t1 = Factory(:thought, :project => @project, :created_at => 1.day.ago)
+      @t2 = Factory(:thought, :project => @project, :created_at => 1.hour.ago)
+    end
+    
+    it "should have a thoughts attribtue" do
+      @project.should respond_to(:thoughts)
+    end
+    
+    it "should have thoughts in the right order" do
+      @project.thoughts.should == [@t2, @t1]
+    end
 
   describe "validations" do
     

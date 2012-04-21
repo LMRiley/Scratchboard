@@ -11,6 +11,11 @@ class ProjectsController < ApplicationController
     end
   end
   
+  def show
+    @project = Project.find(params[:id])
+    @thoughts = @project.thoughts
+  end
+  
   def new
     @project = Project.new if signed_in?
     @user = current_user

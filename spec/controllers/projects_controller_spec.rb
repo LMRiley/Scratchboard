@@ -16,6 +16,20 @@ describe ProjectsController do
     end
   end
   
+  describe "GET 'show'" do
+    
+    before(:each) do
+      @project = Factory(:project)
+    end
+    
+    it "should show the projects thoughts" do
+      t1 = Factory(:thought, :project => @project, :content => "Foo bar")
+      t2 = Factory(:thought, :project => @user, :content => "Baz quux")
+      get :show, :id => @project
+      response.should have_selector("span.content", :content => t1.content)
+      response.should have_selector("span.content", :content => t2.content)
+    end
+  
   describe "POST 'create'" do
     
     before(:each) do 

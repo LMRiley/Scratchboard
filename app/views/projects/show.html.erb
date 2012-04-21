@@ -1,0 +1,18 @@
+<div class = "container-fluid">
+	<div class = "row-fluid">
+		<div class = "span9">
+		  <h2>
+		  	<%= @project.title %>
+		  </h2>
+		  <%= @project.body %>
+		  </br>
+		  <% unless @project.thoughts.empty? %>
+		    <table class = "projects", summary = "User projects">
+		      <h3>Thoughts</h3>
+		      <%= render @thoughts %>
+		    </table>
+		  <% end %> 
+		<%= link_to "New thought", new_project_thought_path(@project), :class => "btn btn-success" %>  
+		</div>
+	</div>
+</div>

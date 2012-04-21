@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = @user.name
-    @project = Project.new if signed_in?
     @projects = @user.projects
   end
   
