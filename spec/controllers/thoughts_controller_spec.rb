@@ -4,23 +4,23 @@ describe ThoughtsController do
   render_views
 
   describe "access control" do
+    
+    before(:each) do
+      @user = Factory(:user)
+      @project = Factory(:project)
 
     it "should deny access to 'create'" do
       post :create
       response.should redirect_to(signin_path)
     end
-
-    it "should deny access to 'destroy'" do
-      delete :destroy, :id => 1
-      response.should redirect_to(signin_path)
     end
   end
 
   describe "POST 'create'" do
 
       before(:each) do
-        @project = test_sign_in(Factory(:user))
-      end
+        @user = Factory(:user)
+        @project = Factory(:project)
 
       describe "failure" do
 
@@ -28,16 +28,17 @@ describe ThoughtsController do
           @attr = { :content => "" }
         end
 
-        it "should not create a micropost" do
+        it "should not create a thought" do
           lambda do
-            post :create, :micropost => @attr
-          end.should_not change(Micropost, :count)
+            post :create, :thought => @attr
+          end.should_not change(Thought, :count)
         end
 
         it "should render the home page" do
-          post :create, :micropost => @attr
+          post :create, :thought => @attr
           response.should render_template('pages/home')
         end
+      
       end
 
       describe "success" do
@@ -46,21 +47,22 @@ describe ThoughtsController do
           @attr = { :content => "Lorem ipsum" }
         end
 
-        it "should create a micropost" do
+        it "should create a thought" do
           lambda do
-            post :create, :micropost => @attr
-          end.should change(Micropost, :count).by(1)
+            post :create, :thought => @attr
+          end.should change(Thought, :count).by(1)
         end
 
-        it "should redirect to the home page" do
-          post :create, :micropost => @attr
-          response.should redirect_to(root_path)
+        it "should redirect to the project page" do
+          post :create, :thought => @attr
+          response.should redirect_to(@project)
         end
 
         it "should have a flash message" do
-          post :create, :micropost => @attr
-          flash[:success].should =~ /micropost created/i
+          post :create, :thought => @attr
+          flash[:success].should =~ /thought created/i
         end
       end
-    end  
+      end
+  end  
 end

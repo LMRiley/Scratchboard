@@ -19,16 +19,19 @@ describe ProjectsController do
   describe "GET 'show'" do
     
     before(:each) do
+      @user = Factory(:user)
       @project = Factory(:project)
-    end
     
     it "should show the projects thoughts" do
-      t1 = Factory(:thought, :project => @project, :content => "Foo bar")
-      t2 = Factory(:thought, :project => @user, :content => "Baz quux")
+      thought1 = Factory(:thought, :project => @project, :content => "Foo bar")
+      thought2 = Factory(:thought, :project => @project, :content => "Baz quux")
       get :show, :id => @project
-      response.should have_selector("span.content", :content => t1.content)
-      response.should have_selector("span.content", :content => t2.content)
+      response.should have_selector("div.content", :content => thought1.content)
+      response.should have_selector("div.content", :content => thought2.content)
     end
+    end
+    
+  end
   
   describe "POST 'create'" do
     

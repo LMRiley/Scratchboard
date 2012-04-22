@@ -6,7 +6,8 @@ Factory.define :user do |user|
 end
 
 Factory.define :project do |project|
-  project.body "test content"
+  project.title "test title"
+  project.body "test body"
   project.association :user  
 end
   

@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @title = "Home"
+    @title = "Scratchboard"
     @project = Project.new if signed_in?
   end
 

@@ -8,14 +8,10 @@ describe Thought do
   end
 
   it "should create a new instance given valid attributes" do
-    @project.thought.create!(@attr)
+    @project.thoughts.create!(@attr)
   end
   
   describe "validations" do
-
-    it "should require a project id" do
-      Thought.new(@attr).should_not be_valid
-    end
 
     it "should require nonblank content" do
       @project.thoughts.build(:content => "  ").should_not be_valid
@@ -34,7 +30,7 @@ describe Thought do
     end
 
     it "should have the right associated project" do
-      @thought.project.should == @project.id
+      @thought.project_id.should == @project.id
       @thought.project.should == @project
     end
   end

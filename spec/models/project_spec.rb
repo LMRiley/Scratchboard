@@ -38,20 +38,15 @@ describe Project do
       @t2 = Factory(:thought, :project => @project, :created_at => 1.hour.ago)
     end
     
-    it "should have a thoughts attribtue" do
+    it "should have a thoughts attribute" do
       @project.should respond_to(:thoughts)
     end
-    
-    it "should have thoughts in the right order" do
-      @project.thoughts.should == [@t2, @t1]
-    end
+  end
 
   describe "validations" do
     
     it "should require a user id" do
       Project.new(@attr).should_not be_valid
     end
-  
   end
-
 end
