@@ -21,16 +21,18 @@
 						</br>
 						<h4><%= @user.name %></h4>
 						<p>Projects: <%= @user.projects.count %></p>
-						<%= link_to "New Project", '/projects/new', :class => "btn btn-success" %>
+						<%= link_to "New Project", '/projects/new', :class => "btn" %>
 					</div>
 				</ul>
 			</div>
+			<div class = "well">
 			<div align = "center" >
 			<% unless @user.projects.empty? %>
 				<h4>Current Projects</h4>
 				</br>
 				<%= render @projects %>
 			<% end %>
+			</div>
 			</div>
 		</div>	
 		<div class = "span4">
