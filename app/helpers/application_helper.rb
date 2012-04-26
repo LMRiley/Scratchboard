@@ -13,4 +13,8 @@ module ApplicationHelper
     image_tag("logo.png", :alt => "Scratchboard", :class => ":round")
   end
   
+  def logo_small
+    image_tag("mark.jpg", :alt => "Scratchboard", :class => ":round")
+  end
+  
 end

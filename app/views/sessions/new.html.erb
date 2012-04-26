@@ -12,7 +12,7 @@
 					<%= user.password_field :password %>
 				<% end %>
 				<%= user.actions do %>
-					<%= user.submit 'Sign in'%>
+					<%= user.submit 'Sign in', :class => 'btn btn-success'%>
 			</form>
 			<% end %>
 		<% end %>

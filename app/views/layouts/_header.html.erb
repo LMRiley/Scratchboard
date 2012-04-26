@@ -1,13 +1,19 @@
-<header> 
-	</br>
-	<%= link_to logo, root_path %>
-	<ul class="nav nav-pills pull-right">
-	</br>
-			<% if signed_in? %>
-			<li><%= link_to "Profile", current_user %></li>
-			<li><%= link_to "Log out", signout_path, :method => :delete %></li>
-			<% else %>
-			<li><%= link_to "Log in", signin_path %></li>
-			<% end %>
-		</ul>
+<!DOCTYPE html>
+<html lang="en">
+<div class = "container-fluid">
+<header>
+     </br>
+     <%= link_to logo, root_path %>
+     <ul class="nav nav-pills pull-right">
+     </br>
+               <% if signed_in? %>
+               <li><%= link_to "Projects", current_user %></li>
+               <li><%= link_to "Log out", signout_path, :method => :delete %></li>
+               <% else %>
+               <li><%= link_to "Log in", signin_path %></li>
+               <% end %>
+          </ul>
 </header>
+</div>
+</html>
+

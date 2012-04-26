@@ -44,9 +44,9 @@ describe "LayoutLinks" do
       response.should have_selector("a", :href => signout_path, :content => "Log out")
     end
   
-    it "should have a profile link" do
+    it "should have a link to user's projects" do
       visit root_path
-      response.should have_selector("a", :href => user_path(@user), :content => "Profile")
+      response.should have_selector("a", :href => user_path(@user), :content => "Projects")
     end
   
   end

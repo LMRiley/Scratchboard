@@ -7,9 +7,9 @@ PmApp31::Application.routes.draw do
     resources :thoughts
   end
   
-  match '/getstarted',  :to => 'users#new'
-  match '/signin',      :to => 'sessions#new'
-  match '/signout',     :to => 'sessions#destroy'      
+  match '/getstarted',     :to => 'users#new'
+  match '/signin',         :to => 'sessions#new'
+  match '/signout',        :to => 'sessions#destroy'      
   match '/about',       :to => 'pages#about'
   
   root :to => 'pages#home'
