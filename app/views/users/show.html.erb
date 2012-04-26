@@ -1,22 +1,43 @@
+<!DOCTYPE html>
+<html>
 <div class = "container-fluid">
+	</br>
+	</br>
 	<div class = "row-fluid">
-		<div class = "span9">
-			<h2>
-			  Welcome back, <%= @user.name %>
-		  </h2>
-		  <%= link_to "New project", '/projects/new', :class => "btn btn-success" %> 
-		  <% unless @user.projects.empty? %>
-		    <table class = "projects", summary = "User projects">
-		      <h3>Your projects</h3>
-		      <%= render @projects %>
-		    </table>
-		    <% end %>  
+		<div class = "span4">
+			&nbsp;
 		</div>
-		<div class = "span3">
-			<%= gravatar_for(@user) %> <br />
-			<strong>Name:</strong> <%= @user.name %> <br />
-			<strong>Email:</strong> <%= @user.email %>
-			<strong>Projects:</strong> <%= @user.projects.count %>
+		<div class = "span4">
+			<div class = "well">
+				<ul class="thumbnails">
+					<li class="span1.5">
+						</br>
+			 			<div class="thumbnail">
+		      			<%= gravatar_for(@user) %>
+						</div>
+					</li>
+					<div class = "span 2">
+						</br>
+						</br>
+						<h4><%= @user.name %></h4>
+						<p>Projects: <%= @user.projects.count %></p>
+						<%= link_to "New Project", '/projects/new', :class => "btn btn-success" %>
+					</div>
+				</ul>
+			</div>
+			<div align = "center" >
+			<% unless @user.projects.empty? %>
+				<h4>Current Projects</h4>
+				</br>
+				<%= render @projects %>
+			<% end %>
+			</div>
+		</div>	
+		<div class = "span4">
+			&nbsp;
 		</div>
 	</div>
 </div>
+</html>
+
+
