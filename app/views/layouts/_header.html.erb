@@ -3,7 +3,11 @@
 <div class = "container-fluid">
 <header>
      </br>
-     <%= link_to logo, root_path %>
+	<% if signed_in? %>
+		<%= link_to logo, current_user %>
+	<% else %>
+     	<%= link_to logo, root_path %>
+	<% end %>
      <ul class="nav nav-pills pull-right">
      </br>
                <% if signed_in? %>

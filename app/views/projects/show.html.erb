@@ -1,18 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
 <div class = "container-fluid">
+	<br>
 	<div class = "row-fluid">
-		<div class = "span9">
-		  <h2>
-		  	<%= @project.title %>
-		  </h2>
-		  <%= @project.body %>
-		  </br>
-		  <% unless @project.thoughts.empty? %>
-		    <table class = "projects", summary = "User projects">
-		      <h3>Thoughts</h3>
-		      <%= render @thoughts %>
-		    </table>
-		  <% end %> 
-		<%= link_to "New thought", new_project_thought_path(@project), :class => "btn" %>  
+		<div class = "span1">
+			&nbsp;
+		</div>
+		<div class = "span10">
+		<h2><%= @project.title %></h2>
+		<%= @project.body %>
+		</div>
+		<div class = "span1">
+			&nbsp;
+		</div>
+	</div>
+	</br>
+	</br>
+	<div class = "row-fluid">
+		<div class = "span1">
+			&nbsp;
+		</div>
+		<div class = "span10">
+			<h3>Scratches</h3>
+			</br>
+			<%= render @thoughts %>
+		</div>
+		<div class = "span1">
+			&nbsp;
+		</div>
+	</div>
+	</br>
+	</br>
+	<div class = "row-fluid">
+		<div class = "span1">
+			&nbsp;
+		</div>
+		<div class = "span5">
+			<h3>Project Brief</h3>
+			//project brief will go here
+		</div>
+		<div class = "span5">
+			<h3>Stories</h3>
+			//stories will go here
+		</div>
+		<div class = "span1">
+			&nbsp;
 		</div>
 	</div>
 </div>
+</html>
+

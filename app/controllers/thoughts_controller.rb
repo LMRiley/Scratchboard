@@ -4,6 +4,7 @@ class ThoughtsController < ApplicationController
   def new
     @project = Project.find(params[:project_id])
     @thought = Thought.new if signed_in?
+    @title = "New thought | Scratchboard"
   end
   
   def create

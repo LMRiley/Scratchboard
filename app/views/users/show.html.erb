@@ -27,9 +27,11 @@
 			</div>
 			<div class = "well">
 			<div align = "center" >
-			<% unless @user.projects.empty? %>
-				<h4>Current Projects</h4>
-				</br>
+			<h4>Current Projects</h4>
+			</br>
+			<% if @user.projects.empty? %>
+				None yet. Get to work!
+				<% else %>
 				<%= render @projects %>
 			<% end %>
 			</div>

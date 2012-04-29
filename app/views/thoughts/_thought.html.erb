@@ -1,8 +1,10 @@
-<tr>
-  <td class = "project">
-    <span class = "title"><%= thought.content %></span>
-    <span class="timestamp">
-		Added <%= time_ago_in_words(thought.created_at) %> ago.
-	</span>
-  </td>
-</tr>
+<!DOCTYPE html>
+<html lang="en">
+	<div class = "span3">
+   	<strong><%= thought.content %></strong>
+	</br>
+	Added <%= time_ago_in_words(thought.created_at) %> ago.
+	</br>
+	</br>
+	</div>
+</html>

@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    @title = "Get started with Scratchboard"
+    @title = "Get Started | Scratchboard"
   end
   
   def show
     @user = User.find(params[:id])
-    @title = @user.name
+    @title = "Projects | Scratchboard"
     @projects = @user.projects
   end
   
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to @user
       flash[:"alert alert-success"] = "Success! Welcome to Scratchboard."
     else
-      @title = "Get started"
+      @title = "Get started | Scratchboard"
       render 'new'
     end
   end

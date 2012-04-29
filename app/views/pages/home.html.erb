@@ -5,14 +5,22 @@
 		<h1>Ideation meets agile</h1>
 		<p>Scratchboard helps developers, designers, and product managers collaborate to generate product ideas and requirements.</p>
 		<p>
-		<%= link_to "Get started", getstarted_path, :class => "btn btn-success btn-large" %> 
+		<% if signed_in? %>
+			<%= link_to "Your Account", current_user, :class => "btn btn-success btn-large" %> 
+		<% else%>
+			<%= link_to "Get started", getstarted_path, :class => "btn btn-success btn-large" %> 
+		<% end %>
 		</p>
 	</div>
 	</br>
 	<div class = "row-fluid">
 		<div class="span6">
 			<h3>Capture ideas now. Fine-tune later.</h3>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. Nulla facilisi. Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. Nulla facilisi. Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus. Nulla facilisi. Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus.
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. 
+			Nulla facilisi. Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus. Lorem ipsum dolor 
+			sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. Nulla facilisi. 
+			Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus. Nulla facilisi. Pellentesque volutpat 
+			tellus a odio elementum sit amet tincidunt eros faucibus.
 		</div>
 		<div class ="span1">
 			&nbsp;
@@ -30,6 +38,9 @@
 	</br>
 	</br>
 	<div class = "row-fluid">
+		<div class ="span1">
+			&nbsp;
+		</div>
 	<ul class="thumbnails">
 		<li class ="span3">
 			<div class ="thumbnail">
@@ -40,9 +51,6 @@
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			</div>
 		</li>
-		<div class ="span1">
-			&nbsp;
-		</div>
 		<li class ="span3">
 			<div class ="thumbnail">
 				<%= image_tag "feature_example.jpg" %>
@@ -52,9 +60,6 @@
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			</div>
 		</li>
-		<div class ="span1">
-			&nbsp;
-		</div>
 		<li class ="span3">
 			<div class ="thumbnail">
 				<%= image_tag "feature_example.jpg" %>
@@ -70,6 +75,7 @@
 	</ul>
 	</div>
 	</br>
+	</br>
 	<div class = "row-fluid">
 		<div class = "span6">
 			<div class = "thumbnail" >
@@ -79,11 +85,17 @@
 		<div class="span5">
 			<div align = "center">
 			<h3>Put away the Post-Its. Use Scratchboard.</h3>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. Nulla facilisi. Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus. Get started, yo!
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. 
+			Nulla facilisi. Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus. Get started, yo!
 			</div>
 			</br>
 			<div align = "center">
-			<%= link_to "Get started", getstarted_path, :class => "btn btn-success btn-large" %> or <%= link_to "sign in", signin_path %>
+				<% if signed_in? %>
+					<%= link_to "Your Account", current_user, :class => "btn btn-success btn-large" %> 
+				<% else%>
+					<%= link_to "Get started", getstarted_path, :class => "btn btn-success btn-large" %> 
+					or <%= link_to "log in", signin_path %>
+				<% end %>
 			</div>
 		</div>
 	</div>		
