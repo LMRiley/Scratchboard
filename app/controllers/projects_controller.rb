@@ -4,10 +4,9 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(params[:project])
     if @project.save
-      flash[:success] = "Project created!"
       redirect_to current_user
     else
-      render 'pages/home'
+      render 'new'
     end
   end
   

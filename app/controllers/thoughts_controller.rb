@@ -1,3 +1,4 @@
+require 'rails_autolink'
 class ThoughtsController < ApplicationController
   before_filter :authenticate
 
@@ -11,7 +12,6 @@ class ThoughtsController < ApplicationController
     @project = Project.find(params[:project_id])
     @thought = @project.thoughts.build(params[:thought])
     if @thought.save
-      flash[:success] = "Thought created!" 
       redirect_to @project 
     else
       render 'pages/home'

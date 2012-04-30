@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<div class = "span3">
-   	<strong><%= thought.content %></strong>
-	</br>
-	Added <%= time_ago_in_words(thought.created_at) %> ago.
-	</br>
-	</br>
+		<div class = "well">
+   			<strong><%= auto_link(thought.content) %></strong>
+			<%= if thought.scratchfile.exists? then image_tag thought.scratchfile.url(:medium), :class => 'thumbnail' end %>
+			</br>
+			Added <%= time_ago_in_words(thought.created_at) %> ago.
+		</div>
 	</div>
 </html>

@@ -24,9 +24,18 @@
 			<h3>Scratches</h3>
 			</br>
 			<%= render @thoughts %>
+			</br>
 		</div>
 		<div class = "span1">
 			&nbsp;
+		</div>
+	</div>
+	<div class = "row-fluid">
+		<div class = "span1">
+			&nbsp;
+		</div>
+		<div class = "span11">
+			<%= link_to "New Scratch", new_project_thought_path(@project), :class => "btn btn-primary" %>
 		</div>
 	</div>
 	</br>

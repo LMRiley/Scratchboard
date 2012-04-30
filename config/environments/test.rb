@@ -32,4 +32,7 @@ PmApp31::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  
+  # Point paperclip to the correct image processor
+  Paperclip.options[:command_path] = "/opt/local/bin/"
 end

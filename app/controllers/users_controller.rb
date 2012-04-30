@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       redirect_to @user
-      flash[:"alert alert-success"] = "Success! Welcome to Scratchboard."
+      flash[:"alert alert-success"] = "Welcome to Scratchboard!"
     else
       @title = "Get started | Scratchboard"
       render 'new'
