@@ -22,6 +22,9 @@
 		</div>
 		<div class = "span10">
 			<h3>Scratches</h3>
+			<div align = "right">
+				<%= link_to "+", new_project_thought_path(@project), :class => "btn btn-success" %>
+			</div>
 			</br>
 			<%= render @thoughts %>
 			</br>
@@ -34,11 +37,7 @@
 		<div class = "span1">
 			&nbsp;
 		</div>
-		<div class = "span11">
-			<%= link_to "New Scratch", new_project_thought_path(@project), :class => "btn btn-primary" %>
-		</div>
 	</div>
-	</br>
 	</br>
 	<div class = "row-fluid">
 		<div class = "span1">
@@ -49,7 +48,7 @@
 			//project brief will go here
 		</div>
 		<div class = "span5">
-			<h3>Stories</h3>
+		<h3>Stories</strong></h3>
 			//stories will go here
 		</div>
 		<div class = "span1">

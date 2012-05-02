@@ -18,4 +18,9 @@ class ThoughtsController < ApplicationController
     end
   end
   
+  def show
+    @project = Project.find(params[:project_id])
+    @thought = Thought.find(params[:id])
+  end
+  
 end

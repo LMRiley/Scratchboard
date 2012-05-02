@@ -10,11 +10,15 @@ module ApplicationHelper
   end
   
   def logo
-    image_tag("logo.png", :alt => "Scratchboard", :class => ":round")
+    image_tag("logo.png", :alt => "Scratchboard")
   end
   
   def logo_small
-    image_tag("mark.jpg", :alt => "Scratchboard", :class => ":round")
+    image_tag("mark.jpg", :alt => "Scratchboard")
+  end
+  
+  def file_icon
+    image_tag("download.png", :alt => "Get file", :class => 'thumbnail')
   end
   
 end

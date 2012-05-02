@@ -1,11 +1,11 @@
 <%= twitter_bootstrap_form_for [@project, @thought], :html => { :multipart => true } do |t| %>
 <%= t.inputs 'Add a scratch' do %>
   </br>
-  <%= t.text_field :content, "What's on your mind?" %>
+  <%= t.text_area :content, "What's on your mind?", :size => '20x5' %>
   <%= t.file_field :scratchfile, "__" %>
   </br>
   <%= t.actions do %>
-		<%= t.submit 'Scratch it', :class => 'btn btn-primary'%>
+		<%= t.submit 'Scratch it', :class => 'btn btn-success'%>
   <% end %>
 <% end %>
 <% end %>
