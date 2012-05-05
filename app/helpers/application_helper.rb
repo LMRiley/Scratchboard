@@ -14,7 +14,7 @@ module ApplicationHelper
   end
   
   def logo_small
-    image_tag("mark.jpg", :alt => "Scratchboard")
+    image_tag("mark.png", :alt => "Scratchboard")
   end
   
   def file_icon

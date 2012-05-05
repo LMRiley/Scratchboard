@@ -1,7 +1,7 @@
 <%= twitter_bootstrap_form_for @project do |p| %>
 	<%= p.inputs 'Create your project' do %>
 		</br>
-  		<%= render 'shared/error_messages', :object => p.object %>
+  		<%= render 'shared/project_error_messages', :object => p.object %>
   		<%= p.text_field :title, :placeholder => "e.g., Customer Segmentation" %>
   		<%= p.text_area :body, "The Gist", :size => "24x4", :placeholder => "What's this project all about?     (140 chars or less)" %> 
 		<%= p.actions do %>

@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
       redirect_to current_user
     else
       render 'new'
+      flash[:"alert alert-danger"] = "Yikes. There was a problem saving the project"
     end
   end
   
@@ -14,6 +15,12 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @title = @project.title
     @thoughts = @project.thoughts
+    if @project.user == current_user
+      @project
+    else
+      redirect_to current_user
+      flash[:"alert alert-warning"] = "Sorry - you do not have access to that project"
+    end
   end
   
   def new

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+before_filter :authenticate, :only => [:show, :edit, :update]
+  
   def new
     @user = User.new
     @title = "Get Started | Scratchboard"
@@ -8,6 +10,23 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @title = "Projects | Scratchboard"
     @projects = @user.projects
+    if @user == current_user
+      @user
+    else
+      redirect_to current_user
+      flash[:"alert alert-danger"] = "Nice try, you do not have access to that user"
+    end
+  end
+  
+  def edit
+    @user = User.find(params[:id])
+    @title = "Edit Profile | Scratchboard"
+    if @user == current_user
+      @user
+    else
+      redirect_to current_user 
+      flash[:"alert alert-danger"] = "Nice try, you do not have access to that user"    
+    end
   end
   
   def create
@@ -21,5 +40,16 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
+#TODO: Get this working. Currently, updating password destroys the current session, logging the user out.
+ # def update
+  #  @user = User.find(params[:id])
+   # if @user.update_attributes(params[:user])
+    #  flash[:success] = "Profile updated."
+     # redirect_to @user
+  #  else
+   #   redirect_to current_user
+  #  end
+#  end
 
 end

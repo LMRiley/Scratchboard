@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <div class = "container-fluid">
-<header>
-     </br>
-	<% if signed_in? %>
-		<%= link_to logo, current_user %>
-	<% else %>
-     	<%= link_to logo, root_path %>
-	<% end %>
-     <ul class="nav nav-pills pull-right">
-     </br>
-               <% if signed_in? %>
-               <li><%= link_to "Projects", current_user %></li>
-               <li><%= link_to "Log out", signout_path, :method => :delete %></li>
-               <% else %>
-               <li><%= link_to "Log in", signin_path %></li>
-               <% end %>
-          </ul>
-</header>
+    </br>
+	</br>
+	<div class = "row-fluid">
+		<div class = "span 6">
+			<% if signed_in? %>
+				<%= link_to logo, current_user %>
+			<% else %>
+			    <%= link_to logo, root_path %>
+			<% end %>
+		</div>
+		<div class = "span5">
+			&nbsp;
+		</div>
+		<div class = "span 1">
+			</br>
+			</br>
+			<% if signed_in? %>
+				<div class="btn-group">
+				  <a class="btn dropdown-toggle" data-toggle="dropdown" href= '#'>
+					<i class="icon-user"></i>
+				    <span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu">
+				    <%= link_to "Projects", current_user %>
+					<%= link_to "Edit Profile", edit_user_path(current_user) %>
+					<%= link_to "About", '/about' %>
+					<li class="divider"></li>
+					<%= link_to "Log Out", signout_path %>
+				  </ul>
+				</div>
+			<% else %>
+			    <a class = 'btn' href = '/signin'><i class="icon-lock"></i> Login</a>
+			<% end %>
+		</div>
+	</div>
+</br>
 </div>
 </html>
 

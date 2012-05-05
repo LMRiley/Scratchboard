@@ -1,7 +1,7 @@
 PmApp31::Application.routes.draw do
   get "sessions/new"
 
-  resources :users
+  resources :users, :only => [:new, :create, :show, :edit, :update]
   resources :sessions, :only => [:new, :create, :destroy]
   resources :projects do 
     resources :thoughts
