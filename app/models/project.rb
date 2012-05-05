@@ -1,7 +1,8 @@
 class Project < ActiveRecord::Base
-  attr_accessible :body, :title
+  attr_accessible :title, :body, :brief
   belongs_to :user
   has_many :thoughts
+  has_many :stories
   
   validates :user_id, :presence => true
   validates :title, :presence => true

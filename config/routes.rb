@@ -5,6 +5,7 @@ PmApp31::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   resources :projects do 
     resources :thoughts
+    resources :stories
   end
   
   match '/getstarted',     :to => 'users#new'

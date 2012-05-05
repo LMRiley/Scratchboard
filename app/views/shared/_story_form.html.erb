@@ -1,0 +1,10 @@
+<%= twitter_bootstrap_form_for [@project, @story] do |s| %>
+<%= s.inputs 'New user story' do %>
+  </br>
+  <%= s.text_area :content, "__", :size => '20x3' %>
+  </br>
+  <%= s.actions do %>
+		<%= s.submit 'Save', :class => 'btn'%>
+  <% end %>
+<% end %>
+<% end %>

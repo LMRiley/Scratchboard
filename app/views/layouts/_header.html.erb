@@ -11,18 +11,20 @@
 			    <%= link_to logo, root_path %>
 			<% end %>
 		</div>
-		<div class = "span5">
+		<div class = "span4">
 			&nbsp;
 		</div>
-		<div class = "span 1">
+		<div class = "span 2">
 			</br>
 			</br>
 			<% if signed_in? %>
 				<div class="btn-group">
 				  <a class="btn dropdown-toggle" data-toggle="dropdown" href= '#'>
 					<i class="icon-user"></i>
+					<%= current_user.name %>
 				    <span class="caret"></span>
 				  </a>
+				<div align = "left">
 				  <ul class="dropdown-menu">
 				    <%= link_to "Projects", current_user %>
 					<%= link_to "Edit Profile", edit_user_path(current_user) %>
@@ -32,6 +34,9 @@
 				  </ul>
 				</div>
 			<% else %>
+				<div class = "span1">
+					&nbsp;
+				</div>
 			    <a class = 'btn' href = '/signin'><i class="icon-lock"></i> Login</a>
 			<% end %>
 		</div>

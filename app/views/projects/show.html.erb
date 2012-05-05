@@ -22,11 +22,16 @@
 		</div>
 		<div class = "span10">
 			<h3>Scratches</h3>
-			<div align = "right">
-				<%= link_to "+", new_project_thought_path(@project), :class => "btn btn-success" %>
-			</div>
-			</br>
-			<%= render @thoughts %>
+			<% unless @project.thoughts.empty? %>
+				<div align = "right">
+					<%= link_to "+", new_project_thought_path(@project), :class => "btn btn-success" %>
+				</div>
+				</br>
+				<%= render @thoughts %>
+			<% else %>
+				<div align = "center"><big> Add your first scratch! </big> &nbsp; &nbsp; <%= link_to "+", 
+				new_project_thought_path(@project), :class => "btn btn-success" %></div>
+			<% end %>
 			</br>
 		</div>
 		<div class = "span1">
@@ -44,12 +49,27 @@
 			&nbsp;
 		</div>
 		<div class = "span5">
-			<h3>Project Brief</h3>
-			//project brief will go here
+			<h3>Brief</h3>
+			</br>
+			<% unless @project.brief.blank? %>
+				<div class = "well">
+					<%= @project.brief %>
+				</div>
+			<% end %>
+			<%= link_to "edit", edit_project_path(@project) %>
 		</div>
-		<div class = "span5">
+		<div class = "span1">
+			&nbsp;
+		</div>
+		<div class = "span4">
 		<h3>Stories</strong></h3>
-			//stories will go here
+		</br>
+		<%= render @stories %>
+		</br>
+		<div align = "right">
+			<%= link_to "+", new_project_story_path(@project), :class => "btn btn-success" %>
+		</div>	
+		</br>
 		</div>
 		<div class = "span1">
 			&nbsp;
