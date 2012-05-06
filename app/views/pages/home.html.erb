@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <div class = "container-fluid">
+	</br>
 	<div class = "hero-unit">
 		<h1>Ideation meets agile</h1>
 		<p>Scratchboard helps developers, designers, and product managers collaborate to generate product ideas and requirements.</p>
 		<p>
 		<% if signed_in? %>
-			<%= link_to "Your Account", current_user, :class => "btn btn-success btn-large" %> 
+			<%= link_to "Get started", current_user, :class => "btn btn-success btn-large" %> 
 		<% else%>
 			<%= link_to "Get started", getstarted_path, :class => "btn btn-success btn-large" %> 
 		<% end %>
@@ -82,7 +83,7 @@
 				<%= image_tag "get_started.jpg" %>
 			</div>
 		</div>
-		<div class="span5">
+		<div class="span6">
 			<div align = "center">
 			<h3>Put away the Post-Its. Use Scratchboard.</h3>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. 
@@ -91,7 +92,7 @@
 			</br>
 			<div align = "center">
 				<% if signed_in? %>
-					<%= link_to "Your Account", current_user, :class => "btn btn-success btn-large" %> 
+					<%= link_to "Get started", current_user, :class => "btn btn-success btn-large" %> 
 				<% else%>
 					<%= link_to "Get started", getstarted_path, :class => "btn btn-success btn-large" %> 
 					or <%= link_to "log in", signin_path %>

@@ -4,7 +4,10 @@
     </br>
 	</br>
 	<div class = "row-fluid">
-		<div class = "span 6">
+		<div class = "span0.5">
+			&nbsp;
+		</div>
+		<div class = "span4.5">
 			<% if signed_in? %>
 				<%= link_to logo, current_user %>
 			<% else %>
@@ -24,15 +27,14 @@
 					<%= current_user.name %>
 				    <span class="caret"></span>
 				  </a>
-				<div align = "left">
 				  <ul class="dropdown-menu">
 				    <%= link_to "Projects", current_user %>
 					<%= link_to "Edit Profile", edit_user_path(current_user) %>
+					<li class="divider"></li>
 					<%= link_to "About", '/about' %>
 					<li class="divider"></li>
 					<%= link_to "Log Out", signout_path %>
 				  </ul>
-				</div>
 			<% else %>
 				<div class = "span1">
 					&nbsp;

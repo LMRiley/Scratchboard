@@ -6,7 +6,7 @@ class Thought < ActiveRecord::Base
   has_attached_file :scratchfile,
     :styles => lambda{ |a|
     ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
-      :thumb=> "100x100",
+      :thumb => "100x100",
       :small  => "200x200",
       :medium => "400x400",
       :large =>   "1000x1000" }: {}

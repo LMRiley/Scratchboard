@@ -12,7 +12,7 @@
 					<%= twitter_bootstrap_form_for [@project, @story], do |s| %>
 						<%= s.inputs 'Edit Story' do %>
 						</br>
-						<%= s.text_area :content, "__", :size => "20x3" %>
+						<%= s.text_area :content, "__", :size => "20x4" %>
 						<%= s.actions do %>
 							<%= s.submit 'Save', :class => 'btn'%>
 						<% end %>

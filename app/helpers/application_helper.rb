@@ -18,7 +18,7 @@ module ApplicationHelper
   end
   
   def file_icon
-    image_tag("download.png", :alt => "Get file", :class => 'thumbnail')
+    image_tag("download_3.png", :alt => "Get file", :style => 'thumb')
   end
   
 end
