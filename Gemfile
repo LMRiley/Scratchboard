@@ -19,6 +19,7 @@ gem 'aws-s3'
 gem 'aws-sdk'
 gem 'rails_autolink'
 gem 'therubyracer'
+gem 'pg'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
