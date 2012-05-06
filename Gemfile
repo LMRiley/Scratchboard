@@ -18,6 +18,7 @@ gem 'paperclip'
 gem 'aws-s3'
 gem 'aws-sdk'
 gem 'rails_autolink'
+gem 'therubyracer'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
