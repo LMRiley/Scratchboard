@@ -3,7 +3,7 @@
 <div class = "container-fluid">
 	</br>
 	<div class = "hero-unit">
-		<h1>Ideation meets agile</h1>
+		<h1>Ideation made agile</h1>
 		<p>Scratchboard helps developers, designers, and product managers collaborate to generate product ideas and requirements.</p>
 		<p>
 		<% if signed_in? %>
@@ -17,11 +17,11 @@
 	<div class = "row-fluid">
 		<div class="span6">
 			<h3>Capture ideas now. Fine-tune later.</h3>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. 
-			Nulla facilisi. Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus. Lorem ipsum dolor 
-			sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. Nulla facilisi. 
-			Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus. Nulla facilisi. Pellentesque volutpat 
-			tellus a odio elementum sit amet tincidunt eros faucibus.
+			Creating software isn't a clean and buttoned-up process. Finely tuned requirements don't just appear - they're a product of 
+			a series of small ideas and thoughts, iterated and revised over time. Scratchboard is a tool to capture those small ideas (or 
+			"scratches") right when they hit you. Scratches are generative and real-time, so you can 
+			jot them down without hesitation. As your project comes into shape, Scratchboard makes it easy to translate your scratches to 
+			more structured requirement briefs and user stories.
 		</div>
 		<div class ="span1">
 			&nbsp;
@@ -30,7 +30,7 @@
 			<ul class="thumbnails">
 			  <li class="span4">
 			    <div class="thumbnail">
-			      <%= image_tag "hero_shot_large.jpg" %>
+			      <%= image_tag "hero.png" %>
 				</div>
 			  </li>
 			</ul>
@@ -45,29 +45,29 @@
 	<ul class="thumbnails">
 		<li class ="span3">
 			<div class ="thumbnail">
-				<%= image_tag "feature_example.jpg" %>
+				<%= image_tag "feature1.png" %>
 			</div>
 			<div align = "center">
 			<h4>Visual project boards</h4>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Quickly add scratches to a project and review them later at a glance.
 			</div>
 		</li>
 		<li class ="span3">
 			<div class ="thumbnail">
-				<%= image_tag "feature_example.jpg" %>
+				<%= image_tag "feature3.png" %>
+			</div>
+			<div align = "center">
+			<h4>Seamless collaboration</h4>
+			Invite others to your boards and build ideas together with ease.
+			</div>
+		</li>
+		<li class ="span3">
+			<div class ="thumbnail">
+				<%= image_tag "feature2.png" %>
 			</div>
 			<div align = "center">
 			<h4>All types of media</h4>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-			</div>
-		</li>
-		<li class ="span3">
-			<div class ="thumbnail">
-				<%= image_tag "feature_example.jpg" %>
-			</div>
-			<div align = "center">
-			<h4>Easy collaboration</h4>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Share photos, docs, links, and more. They all fit right in your project board.
 			</div>
 		</li>
 		<div class ="span1">
@@ -78,17 +78,37 @@
 	</br>
 	</br>
 	<div class = "row-fluid">
-		<div class = "span6">
-			<div class = "thumbnail" >
-				<%= image_tag "get_started.jpg" %>
-			</div>
+		<div class ="span1">
+			&nbsp;
 		</div>
-		<div class="span6">
+		<div class = "span3">
+			<blockquote>
+				<div class = "row-fluid">
+					<div class = "span3">
+						&nbsp;
+					</div>
+					<div class = "span5">
+						<div class = "thumbnail">
+							<%= image_tag("testimonial_headshot.png")%>
+						</div>
+					</div>
+				</div>
+			</br>
+				"Scratchboard has enabled our development team of 10+ to feel a lot smaller. We've maintained our agile approach while 
+				getting everyone more involved in the ideation process."
+				<small>Mike Cruz / Trunk Club</small>
+			</blockquote>
+		</div>
+		<div class = "span1">
+			&nbsp;
+		</div>	
+		<div class="span5">
 			<div align = "center">
-			<h3>Put away the Post-Its. Use Scratchboard.</h3>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris adipiscing ultricies risus porttitor scelerisque. 
-			Nulla facilisi. Pellentesque volutpat tellus a odio elementum sit amet tincidunt eros faucibus. Get started, yo!
+			<h3>Put away the Post-Its. Try Scratchboard.</h3>
+			Ideation is too often separated from the agile software development process, isolated offline on post-its and in notebooks.
+			Bring your ideas to life with Scratchboard and never lose a good idea again. Also, it's free!
 			</div>
+			</br>
 			</br>
 			<div align = "center">
 				<% if signed_in? %>
