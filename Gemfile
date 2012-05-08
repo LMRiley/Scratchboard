@@ -17,9 +17,11 @@ gem "rake", "~> 0.9.2.2"
 gem 'paperclip'
 gem 'aws-s3'
 gem 'aws-sdk'
+gem "paperclip-aws", "~> 1.6.6"
 gem 'rails_autolink'
 gem 'therubyracer'
 gem 'pg'
+
 
 group :development do
   gem 'rspec-rails', '2.6.1'
