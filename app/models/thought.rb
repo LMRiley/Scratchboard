@@ -4,15 +4,16 @@ class Thought < ActiveRecord::Base
  
   validates         :content, :presence => true
   has_attached_file :scratchfile,
-    :styles => lambda{ |a|
-    ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
-      :thumb => "100x100",
-      :small  => "200x200",
-      :medium => "400x400",
-      :large =>   "1000x1000" }: {}
-    },
       :storage => :s3,
-      :s3_credentials => S3_CREDENTIALS
+      :bucket => 'Scratchboard',
+      :s3_credentials => S3_CREDENTIALS,
+      :styles => lambda{ |a|
+      ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
+        :thumb => "100x100",
+        :small  => "200x200",
+        :medium => "400x400",
+        :large =>   "1000x1000" }: {}
+      }
     
   default_scope :order => 'thoughts.created_at DESC'
  
