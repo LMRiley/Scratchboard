@@ -5,7 +5,7 @@ class Thought < ActiveRecord::Base
   validates         :content, :presence => true
   has_attached_file :scratchfile,
       :storage => :s3,
-      :s3_credentials => S3_CREDENTIALS,
+      :s3_credentials => { :access_key_id => ENV['AWS_ACCESS_KEY_ID'], :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'], :bucket => ENV['S3_BUCKET_NAME'] },
       :styles => lambda{ |a|
       ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
         :thumb  => "100x100",
