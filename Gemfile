@@ -15,7 +15,7 @@ gem "twitter_bootstrap_form_for", "~> 1.0.5"
 gem "cancan"
 gem "rake", "~> 0.9.2.2"
 gem 'paperclip'
-gem 'aws-s3'
+gem 'aws-s3', :require => 'aws/s3'
 gem 'aws-sdk', '~> 1.3.4'
 gem "paperclip-aws", "~> 1.6.6"
 gem 'rails_autolink'
