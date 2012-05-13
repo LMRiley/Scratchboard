@@ -4,8 +4,10 @@ PmApp31::Application.routes.draw do
   resources :users, :only => [:new, :create, :show, :edit, :update]
   resources :sessions, :only => [:new, :create, :destroy]
   resources :projects do 
-    resources :thoughts
     resources :stories
+    resources :thoughts do
+      resources :comments
+    end
   end
   
   match '/getstarted',     :to => 'users#new'
