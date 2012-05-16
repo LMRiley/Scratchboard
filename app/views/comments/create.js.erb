@@ -1,5 +1,5 @@
+$('#comment_box_<%= @comment.thought_id %>').val("");
 $("#div_id_<%= @comment.thought_id %>")
-.html("<strong><%= escape_javascript(@comment.user) %>&nbsp;</strong>")
-.append("<%= escape_javascript(@comment.content) %>")
+.prepend("<%= escape_javascript(@comment.content) %><br>")
+.prepend("<strong><%= escape_javascript(@comment.user) %>&nbsp;</strong>")
 .fadein("slow");
-$('#comment').reset()

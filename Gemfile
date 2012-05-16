@@ -21,6 +21,7 @@ gem "paperclip-aws", "~> 1.6.6"
 gem 'rails_autolink'
 gem 'therubyracer'
 gem 'pg'
+gem 'heroku'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

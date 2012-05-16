@@ -28,17 +28,17 @@
 			</br>
 		</div>
 		<div class = "row-fluid">
-			<%= twitter_bootstrap_form_for :comment, :remote => true, :class => 'comment',
+			<%= twitter_bootstrap_form_for :comment, :remote => true,
 			:url => project_thought_comments_path(@project.id,thought.id) do |c| %>
 			<%= c.inputs do %>
-			  	<%= c.text_area :content, "_", :size => '10x2', :class => 'comment' %>
+			  	<%= c.text_area :content, "_", :size => '10x2', :id => "comment_box_#{thought.id}" %>
 			  <%= c.actions do %>
 			          <%= c.submit 'Add comment', :class => 'btn btn-mini' %>
 			  <% end %>
 			<% end %>
 			<% end %>	
 			<div id= 'div_id_<%= thought.id %>'>
-				<!-- ajax responses will go here -->
+				<!-- new comments will go here via ajax -->
 			</div>
 			<% unless thought.comments.empty? %>
 				<%= render thought.comments %>
