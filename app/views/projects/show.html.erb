@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<%= javascript_include_tag('jquery.masonry.min') %>
+<%= javascript_include_tag('jquery.imagesloaded.js') %>
+<script>
+$(document).ready(function() {
+    var $container = $('#masonrybox');
+    $container.imagesLoaded(function(){
+        $container.masonry({
+            itemSelector : '.scratch',
+        });
+    });
+});
+</script>
 <html lang="en">
 <div class = "container-fluid">
 	<br>
@@ -15,23 +27,23 @@
 		</div>
 	</div>
 	<div class = "row-fluid">
-		<div class = "span1">
-			&nbsp;
-		</div>
-		<div class = "span11">
+		<div class = "span12">
 			<h3>Scratches</h3>
-			<% unless @project.thoughts.empty? %>
-				<%= link_to "+", new_project_thought_path(@project), :class => "btn btn-mini btn-success" %>
-				</br>
-				</br>
-				<%= render @thoughts %>
-			<% else %>
-				</br>
-				<blockquote>
-					<em>No scratches yet. Add one now!</em>
-				</blockquote>
-				<%= link_to '+', new_project_thought_path(@project), :class => "btn btn-mini btn-success" %>
-			<% end %>
+				<% unless @project.thoughts.empty? %>
+					<%= link_to "+", new_project_thought_path(@project), :class => "btn btn-mini btn-success" %>
+					</br>
+					</br>
+					<div id = "masonrybox">
+						<%= render @thoughts %>
+					</div>
+				<% else %>
+					</br>
+					<blockquote>
+						<em>No scratches yet. Add one now!</em>
+					</blockquote>
+					<%= link_to '+', new_project_thought_path(@project), :class => "btn btn-mini btn-success" %>
+				<% end %>
+			</div>
 			</br>
 		</div>
 	</div>
