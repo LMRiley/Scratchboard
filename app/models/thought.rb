@@ -7,7 +7,10 @@ class Thought < ActiveRecord::Base
   has_attached_file :scratchfile,
       :storage => :s3,
       :bucket => "Scratchboard",
-      :s3_credentials => S3_CREDENTIALS,
+      :s3_credentials => {
+            :access_key_id => "AKIAJMS2TO62W36D7PJQ",
+            :secret_access_key => "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"
+          },
       :styles => lambda{ |a|
       ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
         :thumb  => "100x100",
