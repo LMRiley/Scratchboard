@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
            format.js
         else
            redirect_to @project
-           flash[:"alert alert-error"] = "Sorry, comments can't be blank"
         end
     end
   end
