@@ -10,6 +10,7 @@ gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 3.1'
+gem 'less-rails-bootstrap'
 gem 'bootstrap-sass', '~> 2.0.1'
 gem "twitter_bootstrap_form_for", "~> 1.0.5"
 gem "cancan"

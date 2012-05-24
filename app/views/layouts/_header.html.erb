@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class = "container-fluid">
+<div class = "row">
     </br>
 	</br>
-	<div class = "row-fluid">
-		<div class = "span0.5">
+	<div class = "span5">
+		<% if signed_in? %>
+			<%= link_to logo, current_user %>
+		<% else %>
+		    <%= link_to logo, root_path %>
+		<% end %>
+	</div>
+	<% if signed_in? %>
+		<div class = "span5">
 			&nbsp;
 		</div>
-		<div class = "span1">
-			<% if signed_in? %>
-				<%= link_to logo, current_user %>
-			<% else %>
-			    <%= link_to logo, root_path %>
-			<% end %>
+		<div class = "span2">
+			</br>
+			<div class="btn-group">
+			  <a class="btn dropdown-toggle" data-toggle="dropdown" href= '#'>
+				<i class="icon-user"></i>
+				<%= current_user.name %>
+			    <span class="caret"></span>
+			  </a>
+			  <ul class="dropdown-menu">
+			    <%= link_to "Projects", current_user %>
+				<%= link_to "Edit Profile", edit_user_path(current_user) %>
+				<li class="divider"></li>
+				<%= link_to "About", '/about' %>
+				<li class="divider"></li>
+				<%= link_to "Log Out", signout_path %>
+			  </ul>
 		</div>
-		<div class = "span4">
+	<% else %>
+		<div class = "span5">
 			&nbsp;
 		</div>
-		<div class = "span 2">
+		<div class = "span2">
 			</br>
-			</br>
-			<% if signed_in? %>
-				<div class="btn-group">
-				  <a class="btn dropdown-toggle" data-toggle="dropdown" href= '#'>
-					<i class="icon-user"></i>
-					<%= current_user.name %>
-				    <span class="caret"></span>
-				  </a>
-				  <ul class="dropdown-menu">
-				    <%= link_to "Projects", current_user %>
-					<%= link_to "Edit Profile", edit_user_path(current_user) %>
-					<li class="divider"></li>
-					<%= link_to "About", '/about' %>
-					<li class="divider"></li>
-					<%= link_to "Log Out", signout_path %>
-				  </ul>
-			<% else %>
-				<div class = "span1">
-					&nbsp;
-				</div>
-			    <a class = 'btn' href = '/signin'><i class="icon-lock"></i> Login</a>
-			<% end %>
+			<a class = 'btn' href = '/signin'><i class="icon-lock"></i> Login</a>
 		</div>
+	<% end %>
+	<div class = "span1">
+		&nbsp;
 	</div>
 </br>
 </div>

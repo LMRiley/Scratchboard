@@ -10,7 +10,7 @@ module ApplicationHelper
   end
   
   def logo
-    image_tag("logo.png", :alt => "Scratchboard")
+    image_tag("SB_logo.png", :alt => "Scratchboard")
   end
   
   def logo_small
