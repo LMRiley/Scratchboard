@@ -2,8 +2,9 @@ class ProjectsController < ApplicationController
   before_filter :authenticate
   
   def create
-    @project = current_user.projects.build(params[:project])
+    @project = Project.create!(params[:project])
     if @project.save
+      @ownership = Ownership.create!(user_id: current_user.id, project_id: @project.id)
       redirect_to @project
     else
       render 'new'
@@ -16,7 +17,7 @@ class ProjectsController < ApplicationController
     @title = @project.title
     @thoughts = @project.thoughts
     @stories = @project.stories
-    if @project.user == current_user
+    if Ownership.find_by_project_id_and_user_id(@project.id, current_user.id)
       @project
     else
       redirect_to current_user
@@ -34,7 +35,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @title = @project.title
     @thoughts = @project.thoughts
-    if @project.user == current_user
+    if Ownership.find_by_project_id_and_user_id(@project.id, current_user.id)
       @project
     else
       redirect_to current_user

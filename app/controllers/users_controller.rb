@@ -40,16 +40,5 @@ before_filter :authenticate, :only => [:show, :edit, :update]
       render 'new'
     end
   end
-
-#TODO: Get this working. Currently, updating password destroys the current session, logging the user out.
- # def update
-  #  @user = User.find(params[:id])
-   # if @user.update_attributes(params[:user])
-    #  flash[:success] = "Profile updated."
-     # redirect_to @user
-  #  else
-   #   redirect_to current_user
-  #  end
-#  end
-
+  
 end

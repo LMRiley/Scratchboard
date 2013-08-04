@@ -1,10 +1,10 @@
 class Project < ActiveRecord::Base
   attr_accessible :title, :body, :brief
-  belongs_to :user
+  has_many :ownerships
+  has_many :users, through: :ownerships
   has_many :thoughts
   has_many :stories
   
-  validates :user_id, :presence => true
   validates :title, :presence => true
   validates :body, :presence => true, :length => {:maximum => 140}
   
