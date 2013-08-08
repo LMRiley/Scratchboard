@@ -15,14 +15,14 @@ $(document).ready(function() {
 <div class = "container-fluid">
 	<br>
 	<div class = "row-fluid">
-		<div class = "span3">
+		<div class = "span2">
 			&nbsp;
 		</div>
-		<div class = "span6"><div class = "page-header"><div align = "center">
+		<div class = "span8"><div class = "page-header"><div align = "center">
 		<h2><%= @project.title %></h2>
-		<%= @project.body %>
+		<%= @project.body %>&nbsp;&nbsp;<%= link_to "Manage Users", collaborators_project_path(@project),  %>
 		</div></div></div>
-		<div class = "span3">
+		<div class = "span2">
 			&nbsp;
 		</div>
 	</div>

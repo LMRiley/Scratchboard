@@ -4,6 +4,9 @@ PmApp31::Application.routes.draw do
   resources :users, :only => [:new, :create, :show, :edit, :update]
   resources :sessions, :only => [:new, :create, :destroy]
   resources :projects do 
+    member do
+      get 'collaborators'
+    end
     resources :stories
     resources :thoughts do
       resources :comments

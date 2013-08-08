@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
       redirect_to @project
     else
       render 'new'
-      flash[:"alert alert-danger"] = "Yikes. There was a problem saving the project"
+      flash[:"alert alert-danger"] = "Oops. There was a problem saving the project"
     end
   end
   
@@ -51,6 +51,12 @@ class ProjectsController < ApplicationController
       redirect_to @project
       flash[:"alert alert-warning"] = "Sorry - there was a problem saving your edit"
     end
+  end
+  
+  def collaborators
+    @users = User.all
+    @project = Project.find(params[:id])
+    @title = 'Project Collaborators'
   end
 
   def destroy
