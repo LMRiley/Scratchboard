@@ -6,7 +6,7 @@
 		<div class = "well">
 			<div class = "row-fluid">
 				<div class = "break-word">
-					<strong><%= auto_link(thought.content, :html => {:target => '_blank' }) %></strong>
+					<%= auto_link(thought.content, :html => {:target => '_blank' }) %>
 				</div>
 				<div>		
 					</br>
@@ -25,7 +25,8 @@
 			        <% end %>	
 				<% end %>
 				</br>
-				<em>Added <%= time_ago_in_words(thought.created_at) %> ago</em>
+				<font size = '1'><strong>Neil Kamireddy, </strong><em><%= time_ago_in_words(thought.created_at) %> ago</em></font>
+				<!-- Get rid of this hard coding -->
 				</br>
 			</div>
 			<div class = "row-fluid">

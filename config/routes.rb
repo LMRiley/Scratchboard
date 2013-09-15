@@ -3,6 +3,7 @@ PmApp31::Application.routes.draw do
 
   resources :users, :only => [:new, :create, :show, :edit, :update]
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :ownerships, :only => [:create, :destroy]
   resources :projects do 
     member do
       get 'collaborators'
