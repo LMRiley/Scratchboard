@@ -16,7 +16,7 @@ gem "rake", "~> 0.9.2.2"
 gem 'paperclip'
 gem "paperclip-aws", "~> 1.6.6"
 gem 'aws-s3', :require => 'aws/s3'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.3.4'
 gem 'rails_autolink'
 gem 'therubyracer'
 gem 'pg'
