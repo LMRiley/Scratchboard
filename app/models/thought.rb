@@ -6,6 +6,8 @@ class Thought < ActiveRecord::Base
  
   validates         :content, :presence => true
   has_attached_file :scratchfile,
+      :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+      :url => "/system/:attachment/:id/:style/:filename",
       :storage => :s3,
       :bucket => "Scratchboard",
       :s3_credentials => S3_CREDENTIALS,
