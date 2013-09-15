@@ -25,8 +25,7 @@
 			        <% end %>	
 				<% end %>
 				</br>
-				<font size = '1'><strong>Neil Kamireddy, </strong><em><%= time_ago_in_words(thought.created_at) %> ago</em></font>
-				<!-- Get rid of this hard coding -->
+				<font size = '1'><strong><%= thought.user.name %>, </strong><em><%= time_ago_in_words(thought.created_at) %> ago</em></font>
 				</br>
 			</div>
 			<div class = "row-fluid">
@@ -40,7 +39,6 @@
 				<% end %>
 				<% end %>	
 				<div id= 'div_id_<%= thought.id %>'>
-					<!-- new comments will go here via ajax -->
 				</div>
 				<% unless thought.comments.empty? %>
 					<%= render thought.comments %>

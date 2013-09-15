@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130804223425) do
+ActiveRecord::Schema.define(:version => 20130915040231) do
 
   create_table "comments", :force => true do |t|
     t.string   "content"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20130804223425) do
     t.string   "scratchfile_content_type"
     t.integer  "scratchfile_file_size"
     t.datetime "scratchfile_updated_at"
+    t.integer  "user_id"
   end
 
   add_index "thoughts", ["project_id", "created_at"], :name => "index_thoughts_on_project_id_and_created_at"

@@ -1,6 +1,7 @@
 class Thought < ActiveRecord::Base
   attr_accessible :content, :scratchfile
   belongs_to :project
+  belongs_to :user
   has_many :comments
  
   validates         :content, :presence => true

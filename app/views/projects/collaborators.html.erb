@@ -1,26 +1,53 @@
 <!DOCTYPE html>
-<h1>Edit Collaborators</h1>
-<%= link_to "Back to Project", project_path(@project) %>
-
-<ul class="collaborators">
-  <% @users.each do |user| %>
-    <ul>
-      <%= gravatar_for user, size: 52 %>
-      <%= user.name %>
-	  <div id = "add_remove_button">
-	  	<% if Ownership.find_by_project_id_and_user_id(@project.id, user.id) %>
-	  		<%= form_for(Ownership.find_by_project_id_and_user_id(@project.id, user.id), html: {method: :delete}) do |f| %>
-			<%= f.submit "Remove", class: "btn btn-default" %>
-			<% end %>
-	  	<% else %>
-			<%= form_for(user.ownerships.build(project_id: @project.id)) do |f| %>
-			<div><%= f.hidden_field :project_id %></div>
-			<div><%= f.hidden_field :user_id %></div>
-			<%= f.submit "Add", class: "btn btn-success" %>
-	  		<% end %>
-	  	<% end %>
-	  </div>
-    </ul>
-  <% end %>
-</ul>
+<html>
+<div class = "container">
+	</br>
+	</br>
+	<div class = "span4">
+		&nbsp;
+	</div>	
+	<div class = "span4">
+		<%= link_to "<< Back to Project", project_path(@project) %>
+		</br>
+		</br>
+		<div class = "well">
+			<div align = "center" >
+				<h3>Manage Collaborators</h3>
+			</div>
+		</br>
+		</br>
+			<% @users.each do |user| %>
+				<ul class="thumbnails">
+					<li class="span1.5">
+			 			<div class="thumbnail">
+		      			<%= gravatar_for user %>
+						</div>
+					</li>
+					<div class = "span 6"> 
+						<p><h4><%= user.name %></h4></p>
+						<div id = "add_remove_button">
+							<% if user == current_user %>
+								<p>(This is you)</p>
+						  	<% elsif Ownership.find_by_project_id_and_user_id(@project.id, user.id) %>
+						  		<%= form_for(Ownership.find_by_project_id_and_user_id(@project.id, user.id), html: {method: :delete}) do |f| %>
+								<%= f.submit "Remove", class: "btn btn-default" %>
+								<% end %>
+						  	<% else %>
+								<%= form_for(user.ownerships.build(project_id: @project.id)) do |f| %>
+								<div><%= f.hidden_field :project_id %></div>
+								<div><%= f.hidden_field :user_id %></div>
+								<%= f.submit "Add", class: "btn btn-success" %>
+						  		<% end %>
+						  	<% end %>
+						</div>
+					</div>
+			    </ul>
+			   <% end %>
+			</div>			
+		</div>
+	</div>
+	<div class = "span4">
+		&nbsp;
+	</div>
+</div>
 </html>

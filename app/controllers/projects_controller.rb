@@ -57,6 +57,12 @@ class ProjectsController < ApplicationController
     @users = User.all
     @project = Project.find(params[:id])
     @title = 'Project Collaborators'
+    if Ownership.find_by_project_id_and_user_id(@project.id, current_user.id)
+      collaborators_project_path(@project)
+    else
+      redirect_to current_user
+      flash[:"alert alert-warning"] = "Sorry - you do not have access to that project"
+    end
   end
 
   def destroy

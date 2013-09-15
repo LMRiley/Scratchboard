@@ -20,7 +20,7 @@ $(document).ready(function() {
 		</div>
 		<div class = "span8"><div class = "page-header"><div align = "center">
 		<h2><%= @project.title %></h2>
-		<%= @project.body %>&nbsp;&nbsp;<%= link_to "Manage Users", collaborators_project_path(@project),  %>
+		<%= @project.body %>&nbsp;&nbsp;<%= link_to "Manage Collaborators", collaborators_project_path(@project),  %>
 		</div></div></div>
 		<div class = "span2">
 			&nbsp;

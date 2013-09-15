@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   
   has_many :ownerships
   has_many :projects, through: :ownerships
+  has_many :thoughts
     
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   

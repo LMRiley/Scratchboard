@@ -11,6 +11,7 @@ class ThoughtsController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @thought = @project.thoughts.build(params[:thought])
+    @thought.user = current_user
     if @thought.save
       redirect_to @project 
     else
@@ -22,6 +23,7 @@ class ThoughtsController < ApplicationController
     @project = Project.find(params[:project_id])
     @thought = Thought.find(params[:id])
     @comments = @thought.comments
+    @user = @thought.user
   end
   
 end

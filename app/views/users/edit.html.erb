@@ -9,9 +9,10 @@
 			<div align = "center">		
 				<%= twitter_bootstrap_form_for @user do |user| %>
 					<%= user.inputs 'Edit your profile' do %>
+					<%= gravatar_for(@user) %>
 					</br>
-					<%= gravatar_for(@user) %></br>
-					<%= link_to "Change Avatar", 'https://en.gravatar.com/emails', :target => 'new' %>
+					</br>
+					<%= link_to "Change Avatar (via Gravatar)", 'https://en.gravatar.com/emails', :target => 'new' %>
 					<% end %>
 					<% end %>
 			</div>
