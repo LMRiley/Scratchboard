@@ -15,7 +15,7 @@ class ThoughtsController < ApplicationController
     if @thought.save
       redirect_to @project 
     else
-      render 'pages/home'
+      render 'new'
     end
   end
   

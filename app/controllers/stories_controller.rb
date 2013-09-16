@@ -13,14 +13,14 @@ class StoriesController < ApplicationController
     if @story.save
       redirect_to @project 
     else
-      render 'pages/home'
+      render 'new'
     end
   end
   
   def show
     @project = Project.find(params[:project_id])
     @story = Story.find(params[:id])
-    if @project.user == current_user
+    if Ownership.find_by_project_id_and_user_id(@project.id, current_user.id)
       @story
     else
       redirect_to current_user
@@ -31,7 +31,7 @@ class StoriesController < ApplicationController
   def edit
     @project = Project.find(params[:project_id])
     @story = Story.find(params[:id])
-    if @project.user == current_user
+    if Ownership.find_by_project_id_and_user_id(@project.id, current_user.id)
       edit_project_story_path(@project.id, @story.id)
     else
       redirect_to current_user

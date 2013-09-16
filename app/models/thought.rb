@@ -3,8 +3,9 @@ class Thought < ActiveRecord::Base
   belongs_to :project
   belongs_to :user
   has_many :comments
+  
+  validates :content, :presence => true
  
-  validates         :content, :presence => true
   has_attached_file :scratchfile,
       :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
       :url => "/system/:attachment/:id/:style/:filename",

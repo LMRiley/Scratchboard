@@ -2,13 +2,12 @@ class ProjectsController < ApplicationController
   before_filter :authenticate
   
   def create
-    @project = Project.create!(params[:project])
+    @project = Project.new(params[:project])
     if @project.save
       @ownership = Ownership.create!(user_id: current_user.id, project_id: @project.id)
       redirect_to @project
     else
       render 'new'
-      flash[:"alert alert-danger"] = "Oops. There was a problem saving the project"
     end
   end
   
