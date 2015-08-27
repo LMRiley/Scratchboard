@@ -3,7 +3,7 @@ namespace :db do
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
     User.create!(:name => "Neil Kamireddy",
-                 :email => "neil.kamireddy@gmail.com",
+                 :email => "foobar@gmail.com",
                  :password => "testpassword",
                  :password_confirmation => "testpassword")
     User.all.each do |user|
